@@ -1,6 +1,6 @@
-<p align="center">
+<div style="text-align: center;">
 	<img src="https://ajel.sa/english/wp-content/uploads/2020/03/Saudi-Arabias-Ministry-of-Health-Announces-Recovery-of-Three-COVID-19-Cases.png" width="250">
-</p>
+</div>
 
 <br>
 <br>
@@ -13,10 +13,10 @@
 
 - [**Acknowledgment**](#Acknowledgment)
 - [**Description**](#Description)
-- [**Files**](#**Files**)
+- [**Files**](#Files)
 - [**Requirement**](#Requirement)
 - [**Installation**](#Installation)
-- [**How to run?**](#Installation)
+- [**How to run?**](#How_to_run?)
 
 ---
 <br>
@@ -65,6 +65,10 @@
 	```console
 	> python GetTodayStats.py
 	```
+- **Important note:**
+	```console
+	 Extract the driver file in the same directory of the script and make sure the folder's and the driver name is 'chromedriver'.
+	```	
 <br>
 
 
