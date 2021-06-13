@@ -16,12 +16,12 @@
 - [**Files**](#Files)
 - [**Requirement**](#Requirement)
 - [**Installation**](#Installation)
-- [**How to run?**](#How_to_run?)
+- [**How to run?**](#How-to-run?)
 
 ---
 <br>
 
-# Acknowledgment
+# **Acknowledgment**
 - The data is will be collected from [Ministry of Health](https://www.moh.gov.sa/).
 - This script has been written to help in collecting data and not for any other use.
 
@@ -40,7 +40,7 @@
 
 ---
 
-# **Requirements**
+# **Requirement**
 - **`You need chrome driver for the script to work`**
 	- Download Chrome driver based on your Google chrome version from the official website [here](https://chromedriver.chromium.org/downloads).
 
@@ -53,8 +53,7 @@
 		```console
 		> pip install -r requirements.txt
 		```
-
-
+		
 # **How to run?**
 
 1. **Clone or download the repository.**
