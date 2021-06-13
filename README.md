@@ -16,9 +16,10 @@
 - [**Files**](#Files)
 - [**Requirement**](#Requirement)
 - [**Installation**](#Installation)
-- [**How to run?**](#How-to-run?)
+- [**How to run**](#How-to-run)
 
 ---
+
 <br>
 
 # **Acknowledgment**
@@ -54,7 +55,7 @@
 		> pip install -r requirements.txt
 		```
 		
-# **How to run?**
+# **How to run**
 
 1. **Clone or download the repository.**
 	```conslole
@@ -65,8 +66,7 @@
 	> python GetTodayStats.py
 	```
 - **Important note:**
-	- `Extract the driver file in the same directory of the script and make sure the folder's and the driver name is 'chromedriver'.`
-	- 	
+	- `Extract the driver file in the same directory of the script and make sure the folder's and the driver name is 'chromedriver'.` 	
 <br>
 
 
