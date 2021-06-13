@@ -66,8 +66,7 @@
 	```
 - **Important note:**
 	- `Extract the driver file in the same directory of the script and make sure the folder's and the driver name is 'chromedriver'.`
-
-	
+	- 	
 <br>
 
 
