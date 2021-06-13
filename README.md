@@ -1,8 +1,7 @@
-<div style="text-align: center;">
-	<img src="https://ajel.sa/english/wp-content/uploads/2020/03/Saudi-Arabias-Ministry-of-Health-Announces-Recovery-of-Three-COVID-19-Cases.png" width="250">
-</div>
+<p style="text-align:center;"> 
+	<img src="https://ajel.sa/english/wp-content/uploads/2020/03/Saudi-Arabias-Ministry-of-Health-Announces-Recovery-of-Three-COVID-19-Cases.png" width="250"> 
+</p>
 
-<br>
 <br>
 
 <h1 style="text-align:center"> GetTodayStats a simple python script</h1>
