@@ -12,7 +12,6 @@ from selenium.common.exceptions import NoSuchElementException
 #____________________________________________________________________________________________________________#
 
                                                     #Functions#
-
 def getWebPage():
     """
     A Function to read and load Ministry of Health webpage and return the container of the data.
@@ -96,32 +95,40 @@ def getData():
 
 def Append_to_file(data, file_path):
     try:
+        # Append new data to another file.
         data.to_csv(f'{file_path}', mode='a', header=False)
 
     except:
-        print('The file either in use by other appications or the path is wrong.')
+        print(' The file either in use by other appications or the path is wrong.')
 
 
 def switcher(user_input):
     """
     A Switcher function for user-input
     """
+    try:
+        if user_input == 1:
+                print(getData())
 
-    if user_input == 1:
-        print(getData())
+        elif user_input == 2:
+            # Write data to CSV file
+            getData().to_csv(f'.//COVID_19_status_{datetime.now().strftime("%d_%m")}.csv')
 
-    elif user_input == 2:
-        getData().to_csv(f'.//COVID_19_status_{datetime.now().strftime("%d_%m")}.csv')
+        elif user_input == 3:
+            # Append data to CSV file
+            Append_to_file(getData(), input(' Full path for the file to append (Must be .CSV): '))
+        
+        else:
+            print(' Please select a valid option!')
+            
+    except:
+        print(' Please make sure chrome driver is in the same folder with the script and you\'re using the matched version with google chrome.')
 
-    elif user_input == 3:
-        Append_to_file(getData(), input('Full path for the file to append (Must be .CSV): '))
-    
-    else:
-        print('Please select a valid option!')
     
 
 def main():
- print(f"""{'='*50}
+ print(f"""
+ {'='*50}
 
  Please enter one of the follwoing options:
 
@@ -132,11 +139,11 @@ def main():
 {'='*50}
  """)
  try:
-     inpt = int(input(' Waiting for an input: '))
-     switcher(inpt)
+     # Call the switcher function
+     switcher(int(input(' Waiting for an input: ')))
 
  except:
-    print(' Please enter a valid option.')
+    print(' Please enter the option number.')
 
 
 if __name__ == "__main__":
