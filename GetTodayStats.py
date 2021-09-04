@@ -8,7 +8,7 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
-
+import os
 #____________________________________________________________________________________________________________#
 
                                                     #Functions#
@@ -17,7 +17,7 @@ def getWebPage():
     A Function to read and load Ministry of Health webpage and return the container of the data.
     """
     # Create browser obj
-    driver = webdriver.Chrome(executable_path='chromedriver/chromedriver')
+    driver = webdriver.Chrome(executable_path ='chromedriver/chromedriver')
 
     # request url
     driver.get('https://www.moh.gov.sa/Pages/Default.aspx')
@@ -31,7 +31,7 @@ def getWebPage():
     # Close the browser
     driver.close()
 
-    return BeautifulSoup(html,'html.parser').find_all('div', attrs={'class':'col-sm-4 mb-4'})
+    return BeautifulSoup(html,'html.parser').find_all('div', attrs={'class':'col-sm-12 col-lg-4 mb-4'})
 
 
 def Collect_data():
@@ -44,19 +44,19 @@ def Collect_data():
     WebPage = getWebPage()
 
     # Total Examinations
-    Examinations = int(WebPage[5].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
+    Examinations = int(WebPage[1].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
 
     # Total Vaccinations
-    Vaccinations = int(WebPage[0].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
+    Vaccinations = int(WebPage[3].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
 
     # Total Active cases
-    Active_cases = int(WebPage[4].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
+    Active_cases = int(WebPage[5].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
 
     # Total confirmed cases
-    Total_conf_cases = int(re.sub(r"\D", "", WebPage[1].find('h6', attrs={'class':'funfact-title'}).string))
+    Total_conf_cases = int(re.sub(r"\D", "", WebPage[0].find('h6', attrs={'class':'funfact-title'}).string))
 
     # New cases
-    New_cases = int(WebPage[1].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
+    New_cases = int(WebPage[0].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
 
     # Total recoveries
     Total_recoveries = int(re.sub(r"\D", "",WebPage[2].find('h6', attrs={'class':'funfact-title'}).string))
@@ -65,10 +65,10 @@ def Collect_data():
     New_recoveries = int(WebPage[2].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
 
     # Total deaths
-    Total_deaths = int(re.sub(r"\D", "",WebPage[3].find('h6', attrs={'class':'funfact-title'}).string))
+    Total_deaths = int(re.sub(r"\D", "",WebPage[4].find('h6', attrs={'class':'funfact-title'}).string))
 
     # New deaths
-    New_deaths = int(WebPage[3].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
+    New_deaths = int(WebPage[4].find('div', attrs={'class':'counter red'}).string.replace(',', ''))
 
     return [Examinations, Vaccinations, Active_cases, Total_conf_cases, New_cases, Total_recoveries, New_recoveries, Total_deaths, New_deaths]
 
@@ -127,6 +127,12 @@ def switcher(user_input):
     
 
 def main():
+
+ try:
+    os.system('cls')
+ except:
+    os.system('clear')
+
  print(f"""
  {'='*50}
 
