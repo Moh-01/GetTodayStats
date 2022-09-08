@@ -1,5 +1,5 @@
 <p style="text-align:center;"> 
-	<img src="https://ajel.sa/english/wp-content/uploads/2020/03/Saudi-Arabias-Ministry-of-Health-Announces-Recovery-of-Three-COVID-19-Cases.png" width="250"> 
+	<img src="https://www.moh.gov.sa/_layouts/15/MOH/Internet/New/images/logo.png" width="250"> 
 </p>
 
 <br>
